@@ -1,0 +1,42 @@
+baseURL = "https://rohitsaini.me/"
+languageCode = "en-us"
+title = "Rohit Saini"
+theme = "minimal"
+paginate = 100
+enableRobotsTXT = true
+enableEmoji = true
+buildFuture = true
+
+[params]
+  description = "Backend engineer. Distributed systems, search infrastructure, streaming pipelines, and applied AI."
+  author = "Rohit Saini"
+  github = "https://github.com/rohitsaini1196"
+  email = "mailto:sidsaini1196@gmail.com"
+  linkedin = "https://www.linkedin.com/in/rohitsaini1196/"
+
+[taxonomies]
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediaType = "application/rss+xml"
+    baseName = "rss"
+    isPlainText = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokailight"
+    noClasses = false
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[permalinks]
+  writing = "/writing/:slug/"

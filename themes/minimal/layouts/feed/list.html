@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="feed-page">
+  <h1>Feed</h1>
+
+  {{ $posts := where .Site.RegularPages "Section" "feed" }}
+  {{ $total := len $posts }}
+  {{ range $index, $post := $posts }}
+  <div class="feed-entry">
+    <time class="feed-date">{{ $post.Date.Format "January 2, 2006 · 3:04 PM" }}</time>
+    <div class="feed-content">
+      {{ $post.Content }}
+    </div>
+  </div>
+  {{ if lt (add $index 1) $total }}
+  <hr class="feed-divider">
+  {{ end }}
+  {{ end }}
+</section>
+{{ end }}

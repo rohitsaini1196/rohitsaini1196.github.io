@@ -1,0 +1,19 @@
+{{ define "main" }}
+<section class="writings-page">
+  <h1>Writings</h1>
+
+  {{ $posts := where .Site.RegularPages "Section" "writing" }}
+  {{ $grouped := $posts.GroupByDate "2006" }}
+  {{ range $grouped }}
+  <div class="year-group">
+    <h2 class="year-heading">{{ .Key }}</h2>
+    {{ range .Pages }}
+    <a href="{{ .Permalink }}" class="post-item">
+      <span class="post-title">{{ .Title }}</span>
+      <span class="post-meta">{{ .Date.Format "January 2" }} · {{ .Params.readTime }} min read</span>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+{{ end }}

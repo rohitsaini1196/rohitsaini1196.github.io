@@ -1,0 +1,9 @@
+name = "Minimal"
+license = "MIT"
+licenselink = ""
+description = "A minimal, text-focused personal website theme."
+tags = ["minimal", "personal", "blog"]
+min_version = "0.100.0"
+
+[author]
+  name = "Rohit Saini"

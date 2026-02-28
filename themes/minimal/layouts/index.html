@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="home-intro">
+  <p class="home-description">
+    Backend engineer working on distributed systems, search infrastructure, streaming pipelines, and applied AI. I write about the hard parts of building software that runs reliably at scale — the tradeoffs, the failures, and what actually works in production.
+  </p>
+</section>
+
+<section class="home-recent">
+  <h2>Recent Writing</h2>
+  {{ $posts := (where .Site.RegularPages "Section" "writing") }}
+  {{ range first 3 $posts }}
+  <div class="post-card">
+    <a href="{{ .Permalink }}" class="post-card-title">{{ .Title }}</a>
+    <p class="post-card-excerpt">{{ .Plain | truncate 200 }}  <a href="{{ .Permalink }}" class="read-more">Read more</a></p>
+    <span class="post-meta">{{ .Date.Format "January 2, 2006" }} · {{ .Params.readTime }} min read</span>
+  </div>
+  {{ end }}
+  <a href="/writings/" class="view-all">All writings →</a>
+</section>
+{{ end }}
